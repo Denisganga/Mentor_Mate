@@ -35,3 +35,6 @@ def Register(request):
     return render(request,'register.html')
 
 
+def Homepage(request):
+    return render(request, 'homepage.html')
+
