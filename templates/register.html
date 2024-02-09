@@ -7,11 +7,28 @@
   <title>Registration Form</title>
   <script src="{% static 'js/register.js' %}"></script>
   <link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}">
+  <link rel="icon" type="image/x-icon" href="{% static 'images/mentor.png' %}">
+
+
 </head>
 <body>
   <div class="container">
     <h2>Register For an account</h2>
-    <form id="registerForm" onsubmit="return validateForm()">
+    <form method='post' action= "{% url 'authentication:register' %}" id="registerForm" onsubmit="return validateForm()">
+        {% csrf_token %}
+
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if error_message %}
+    <p style="color: red;">{{ error_message }}</p>
+{% endif %}
+
       <div class="form-group">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required>
