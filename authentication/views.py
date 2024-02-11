@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from django.contrib import messages
-
+from .models import Profile
 def Register(request):
     if request.method=='POST':
         username=request.POST.get('username')
@@ -38,5 +38,10 @@ def Register(request):
 
 
 def Homepage(request):
-    return render(request, 'homepage.html')
+    #profiles=Profile.objects.all()
+    return render(request, 'homepage.html',{'profiles':profiles})
+
+def Profile(request):
+    return render(request,'profile.html')
+
 
