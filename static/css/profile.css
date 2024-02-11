@@ -1,0 +1,29 @@
+/* profile.css */
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.profile-picture img {
+    width: 200px; /* Adjust size as needed */
+    height: auto;
+    border-radius: 50%; /* Make the image round */
+    margin-bottom: 20px;
+}
+
+.profile-details {
+    text-align: left;
+}
+
+.profile-details h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.profile-details p {
+    margin: 5px 0;
+}
