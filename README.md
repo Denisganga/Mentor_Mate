@@ -18,7 +18,7 @@ MentorMate aims to provide a user-friendly environment where individuals can reg
 - **Django**: A high-level Python web framework for rapid development of web applications.
 - **HTML**: The standard markup language for creating web pages and web applications.
 - **CSS**: A style sheet language used for styling HTML elements and enhancing the presentation of web content.
-- **JavaScript (optional)**: Employed for client-side interactivity, such as real-time chat or dynamic user interfaces.
+- **JavaScript**: Employed for client-side interactivity, such as real-time chat or dynamic user interfaces.
 
 ## Setup
 
