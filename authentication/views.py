@@ -39,9 +39,10 @@ def Register(request):
 
 def Homepage(request):
     #profiles=Profile.objects.all()
-    return render(request, 'homepage.html',{'profiles':profiles})
+    return render(request, 'homepage.html')
 
-def Profile(request):
+def Show_profile(request):
+    profiles = Profile.objects.filter(user=request.user)
     return render(request,'profile.html')
 
 
