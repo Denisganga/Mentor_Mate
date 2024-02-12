@@ -4,7 +4,7 @@ Welcome to MentorMate, a platform designed to facilitate mentorship connections 
 
 ## Overview
 
-MentorMate aims to provide a user-friendly environment where individuals can register as mentors or mentees, search for mentorship opportunities, and engage in meaningful mentorship relationships. Whether you're seeking guidance in a specific field or looking to share your expertise with others, MentorMate is here to connect you with like-minded individuals.
+MentorMate aims to provide a user-friendly environment where individuals can register as mentors or mentees, search for mentorship opportunities, and engage in meaningful mentorship relationships through chat rooms. Whether you're seeking guidance in a specific field or looking to share your expertise with others, MentorMate is here to connect you with like-minded individuals.
 
 ## Features
 
