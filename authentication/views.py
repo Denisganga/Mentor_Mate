@@ -58,6 +58,10 @@ def edit_profile(request):
             return redirect('authentication:profile')
         else:
             form=ProfileForm(instance=profile)
+            
+    return render(request, 'authentication/editprofile.html',{'form':form})
+            
+            
         
 
 

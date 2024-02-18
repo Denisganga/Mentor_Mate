@@ -2,7 +2,8 @@ from django.urls import path
 from .views import (Register,
                     Homepage,
                     Show_profile,
-                    edit_profile)
+                    edit_profile,
+                    )
 
 app_name='authentication'
 
