@@ -50,7 +50,7 @@ def Show_profile(request):
 @login_required
 def edit_profile(request):
     #geting the profile of the loggedin user if not available it creates a new one
-    profile, created=Profile.objects.get_or_create(user=User.Profile)
+    profile, created=Profile.objects.get_or_create(user=request.user)
     if request.method=='POST':
         form=ProfileForm(request.POST,request.FILES,instance=profile)
         if form.is_valid():
