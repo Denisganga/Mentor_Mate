@@ -2,6 +2,8 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from django.contrib import messages
 from .models import Profile
+from django.contrib.auth.decorators import login_required
+from .forms import ProfileForm
 def Register(request):
     if request.method=='POST':
         username=request.POST.get('username')
@@ -44,5 +46,19 @@ def Homepage(request):
 def Show_profile(request):
     profiles = Profile.objects.filter(user=request.user)
     return render(request,'profile.html')
+
+@login_required
+def edit_profile(request):
+    #geting the profile of the loggedin user if not available it creates a new one
+    profile, created=Profile.objects.get_or_create(user=User.Profile)
+    if request.method=='POST':
+        form=ProfileForm(request.POST,request.FILES,instance=profile)
+        if form.is_valid():
+            form.save()
+            return redirect('authentication:profile')
+        else:
+            form=ProfileForm(instance=profile)
+        
+
 
 
