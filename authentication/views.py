@@ -49,8 +49,14 @@ def Show_profile(request):
 
 @login_required
 def edit_profile(request):
-    #geting the profile of the loggedin user if not available it creates a new one
-    profile, created=Profile.objects.get_or_create(user=request.user)
+    try:
+        profile=Profile.objects.get(user=request.user)
+        
+    except Profile.DoesNotExist:
+        profile=None
+        
+    form=ProfileForm(instance=profile)
+
     if request.method=='POST':
         form=ProfileForm(request.POST,request.FILES,instance=profile)
         if form.is_valid():
@@ -59,7 +65,7 @@ def edit_profile(request):
         else:
             form=ProfileForm(instance=profile)
             
-    return render(request, 'authentication/editprofile.html',{'form':form})
+    return render(request, 'editprofile.html',{'form':form})
             
             
         
