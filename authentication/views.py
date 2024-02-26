@@ -45,7 +45,7 @@ def Homepage(request):
 
 def Show_profile(request):
     profiles = Profile.objects.filter(user=request.user)
-    return render(request,'profile.html')
+    return render(request,'profile.html',{'profiles':profiles})
 
 @login_required
 def edit_profile(request):

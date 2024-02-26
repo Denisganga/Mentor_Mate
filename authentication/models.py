@@ -9,7 +9,7 @@ class Profile(models.Model):
     is_mentee=models.BooleanField(default=False)
     education=models.CharField(max_length=100)
     skills=models.TextField()
-    years_of_experience=models.PositiveIntegerField()
+    years_of_experience=models.PositiveIntegerField(default=0)
     mentorship_skills=models.CharField(max_length=100)
 
     def __str__(self):
