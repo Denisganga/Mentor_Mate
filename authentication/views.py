@@ -60,6 +60,7 @@ def edit_profile(request):
     if request.method=='POST':
         form=ProfileForm(request.POST,request.FILES,instance=profile)
         if form.is_valid():
+            profile.user=request.user
             form.save()
             return redirect('authentication:profile')
         else:

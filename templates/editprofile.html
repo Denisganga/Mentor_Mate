@@ -1,22 +1,98 @@
-{% load static%}
+<!-- profile_form.html -->
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="{% static 'css/editprofile.css' %}">
-    </head>
-    <body>
-        <h1>Edit Profile</h1>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Save Changes</button>
-    </form>
-        
-        <script src="" async defer></script>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="file"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="checkbox"] {
+            margin-top: 6px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Profile Form</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.media }}
+            <div class="form-group">
+                <label for="{{ form.profile_picture.id_for_label }}">Profile Picture:</label>
+                {{ form.profile_picture }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.full_name.id_for_label }}">Full Name:</label>
+                {{ form.full_name }}
+            </div>
+            <div class="form-group">
+                {{ form.is_mentor }}
+                <label for="{{ form.is_mentor.id_for_label }}">Mentor</label>
+                {{ form.is_mentee }}
+                <label for="{{ form.is_mentee.id_for_label }}">Mentee</label>
+            </div>
+            <div class="form-group">
+                <label for="{{ form.education.id_for_label }}">Education:</label>
+                {{ form.education }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.skills.id_for_label }}">Skills:</label>
+                {{ form.skills }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.years_of_experience.id_for_label }}">Years of Experience:</label>
+                {{ form.years_of_experience }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.mentorship_skills.id_for_label }}">Mentorship Skills:</label>
+                {{ form.mentorship_skills }}
+            </div>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </div>
+</body>
 </html>
