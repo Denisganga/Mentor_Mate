@@ -11,7 +11,12 @@
 <body>
     <div class="profile-container">
         <div class="profile-picture">
-            <img src="{{ profiles.profile_picture.url }}" alt="Profile Picture">
+            <div class="profile-picture">
+                {% if profiles.profile_picture %}
+                    <img src="{{ profiles.profile_picture.url }}" alt="Profile Picture">
+                {% else %}
+                    <p>No profile picture available</p>
+                {% endif %}
         </div>
         <div class="profile-details">
             <h1>{{ profiles.full_name }}</h1>
