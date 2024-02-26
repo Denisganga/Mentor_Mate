@@ -44,7 +44,7 @@ def Homepage(request):
     return render(request, 'homepage.html')
 
 def Show_profile(request):
-    profiles = Profile.objects.filter(user=request.user)
+    profiles = Profile.objects.get(user=request.user)
     return render(request,'profile.html',{'profiles':profiles})
 
 @login_required
@@ -55,7 +55,7 @@ def edit_profile(request):
     except Profile.DoesNotExist:
         profile=None
         
-    form=ProfileForm(instance=profile)
+    form=ProfileForm(instance=profile) 
 
     if request.method=='POST':
         form=ProfileForm(request.POST,request.FILES,instance=profile)
