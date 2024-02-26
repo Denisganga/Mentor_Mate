@@ -15,12 +15,12 @@
         </div>
         <div class="profile-details">
             <h1>{{ profiles.full_name }}</h1>
-            <p><strong>Education:</strong> {{ profile.education }}</p>
-            <p><strong>Skills:</strong> {{ profile.skills }}</p>
-            <p><strong>Years of Experience:</strong> {{ profile.years_of_experience }}</p>
-            <p><strong>Mentorship Skills:</strong> {{ profile.mentorship_skills }}</p>
-            <p><strong>Mentor:</strong> {% if profile.is_mentor %} Yes {% else %} No {% endif %}</p>
-            <p><strong>Mentee:</strong> {% if profile.is_mentee %} Yes {% else %} No {% endif %}</p>
+            <p><strong>Education:</strong> {{ profiles.education }}</p>
+            <p><strong>Skills:</strong> {{ profiles.skills }}</p>
+            <p><strong>Years of Experience:</strong> {{ profiles.years_of_experience }}</p>
+            <p><strong>Mentorship Skills:</strong> {{ profiles.mentorship_skills }}</p>
+            <p><strong>Mentor:</strong> {% if profiles.is_mentor %} Yes {% else %} No {% endif %}</p>
+            <p><strong>Mentee:</strong> {% if profiles.is_mentee %} Yes {% else %} No {% endif %}</p>
         </div>
     </div>
 </body>
