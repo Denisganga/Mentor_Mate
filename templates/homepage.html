@@ -22,6 +22,45 @@
       </nav>
     </div>
   </header>
+
+  <div class="text">
+    <div class="welcome-message">
+      <h1 id="greeting">
+        Good Evening {{user.username}} <b> 
+          lets find you a mentor!
+      </h1>
+    </div>
+    <script>
+      // JavaScript to dynamically change the greeting based on the time of day
+      var today = new Date();
+      var hour = today.getHours();
+
+      var greeting = document.getElementById("greeting");
+
+      if (hour >= 5 && hour < 12) {
+        greeting.innerHTML =
+          "Good Morning {{user.username}}, <b> lets find you a mentor!";
+      } else if (hour >= 12 && hour < 18) {
+        greeting.innerHTML =
+          "Good Afternoon {{user.username}}, <b>lets find you a mentor!";
+      } else {
+        greeting.innerHTML =
+          "Good Evening {{user.username}}, <b> lets find you a mentor!";
+      }
+    </script>
+
+  <div class="imagesection">
+
+    <h1>Grow your skills now</h1>
+    <p>Get mentorship from the best professionals in the field</p>
+    <p>"Mentoring is a brain to pick, an ear to listen, and a push in the right direction." - John Crosby</p>
+  </div>
+  <div class="working">
+    <h1>How it works</h1>
+    <h3>The search section is used to search for mentors or mentees who align with your goals.Here you can find users profile</h3>
+    <h3>The chat section contains chat rooms,choose a room that aligns with the skill you want to be part of it, join and engage in a discussion</h3>
+
+  </div>
 </body>
 <footer>
   <div class="contain">
@@ -37,10 +76,10 @@
     </div>
     <div class="footer-info">
       <h3>Follow Us</h3>
-      <p>X: @MentorMate</p>
-      <p>LinkedIn: /MentorMate</p>
-      <p>Facebook: /MentorMate</p>
-      <p>Instagram: /MentorMate</p>
+      <li><a href="">X</li>
+      <li><a href="">LinkedIn</li>
+      <li><a href="">Facebook</li>
+      <li><a href="">Instagram</li>
     </div>
   </div>
 </footer>
