@@ -4,6 +4,7 @@ header {
   padding: 20px 0;
 }
 
+
 .container {
   width: 80%;
   margin: auto;
@@ -121,11 +122,6 @@ footer {
   padding: 20px; /* Add some padding around the text */
 }
 
-.welcome-message {
-  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background for better readability */
-  padding: 20px; /* Padding around the welcome message */
-
-}
 
 .text{
   color: #fff;
@@ -157,4 +153,29 @@ footer {
   color: #666; 
   font-size: 18px;
   margin-bottom: 10px; /* Add space below each subheading */
+}
+
+.slideshow-container {
+  max-width: 1000px;
+  margin: auto;
+  position: relative;
+}
+
+.mySlides {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.fade {
+  animation: fade 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }

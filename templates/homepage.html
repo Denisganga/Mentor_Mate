@@ -21,9 +21,7 @@
         </ul>
       </nav>
     </div>
-  </header>
-
-  <div class="text">
+       <div class="text">
     <div class="welcome-message">
       <h1 id="greeting">
         Good Evening {{user.username}} <b> 
@@ -47,9 +45,19 @@
         greeting.innerHTML =
           "Good Evening {{user.username}}, <b> lets find you a mentor!";
       }
+
+
+
     </script>
+  </header>
+
+
+
 
   <div class="imagesection">
+
+
+  
 
     <h1>Grow your skills now</h1>
     <p>Get mentorship from the best professionals in the field</p>
@@ -83,5 +91,13 @@
     </div>
   </div>
 </footer>
+<div class="slideshow-container">
+  {% for image in images %}
+  <div class="mySlides fade">
+    <img src="{% static image %}" style="width:100%">
+  </div>
+  {% endfor %}
+</div>
+
 
 </html>

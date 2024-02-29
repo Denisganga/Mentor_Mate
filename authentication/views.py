@@ -39,9 +39,12 @@ def Register(request):
     return render(request,'register.html')
 
 
+import os
+
 def Homepage(request):
-    #profiles=Profile.objects.all()
-    return render(request, 'homepage.html')
+    selected_image_filenames = ['im2.jpeg', 'im3.webp', 'im4.jpg']  # List of selected image filenames
+    images = [os.path.join('images', filename) for filename in selected_image_filenames]
+    return render(request, 'homepage.html', {'images': images})
 
 def Show_profile(request):
     profiles = Profile.objects.get(user=request.user)
