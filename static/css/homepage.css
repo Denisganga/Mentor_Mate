@@ -155,27 +155,4 @@ footer {
   margin-bottom: 10px; /* Add space below each subheading */
 }
 
-.slideshow-container {
-  max-width: 1000px;
-  margin: auto;
-  position: relative;
-}
 
-.mySlides {
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-.fade {
-  animation: fade 1.5s;
-}
-
-@keyframes fade {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
-  }
-}
