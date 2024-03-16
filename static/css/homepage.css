@@ -108,15 +108,7 @@ footer {
   color: #ffcc00;
 
 }
-.imagesection{
-  background-image: url('/static/images/im.jpg');
-  background-repeat: no-repeat;
-  background-size: cover; 
-  color: white; 
-  padding: 50px; /* Adds padding around the text to ensure readability */
-  text-align: center;
- 
-}
+
 
 .imagesection .text {
   padding: 20px; /* Add some padding around the text */
@@ -136,23 +128,22 @@ footer {
   font-weight: bold; /* Make the username bold */
 }
 .working {
-  background-color: #f0f0f0; /* Background color for the div */
-  padding: 20px; /* Add padding around the content */
-  margin-bottom: 20px; /* Add space between this div and the next element */
-  border-radius: 10px; /* Add rounded corners */
+  text-align: center;
+  padding: 50px;
 }
 
 .working h1 {
-  text-align: center;
-  color: #333; /* Text color for the main heading */
-  font-size: 24px; /* Font size for the main heading */
-  margin-bottom: 10px; /* Add space below the main heading */
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #333;
 }
 
 .working h3 {
-  color: #666; 
   font-size: 18px;
-  margin-bottom: 10px; /* Add space below each subheading */
+  margin-bottom: 20px;
+  line-height: 1.5;
+  color: #666;
 }
+
 
 

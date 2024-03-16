@@ -5,6 +5,7 @@ from .models import Profile
 from django.contrib.auth.decorators import login_required
 from .forms import ProfileForm
 from.models import slider
+from django.contrib.auth import authenticate, login, logout
 def Register(request):
     if request.method=='POST':
         username=request.POST.get('username')
@@ -38,6 +39,25 @@ def Register(request):
         return redirect('authentication:homepage')
     
     return render(request,'register.html')
+
+def Login(request):
+    error_message = None
+    if request.method == "POST":
+        username = request.POST.get("fname")
+        password = request.POST.get("pwd")
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+
+            return redirect("homepage:mainpage")
+
+        else:
+            error_message = "Error! The User Does Not Exist"
+
+    return render(
+        request, "authentication/login.html", {"error_message": error_message}
+    )
 
 
 

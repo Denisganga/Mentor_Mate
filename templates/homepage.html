@@ -46,6 +46,23 @@
         greeting.innerHTML =
           "Good Evening {{user.username}}, <b> lets find you a mentor!";
       }
+      document.addEventListener("DOMContentLoaded", function() {
+  const workingSection = document.querySelector('.working');
+
+  // Animate the section when it comes into view
+  function animateSection() {
+      const sectionPosition = workingSection.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+
+      if (sectionPosition < windowHeight * 0.75) { // If section is 75% into view
+          workingSection.classList.add('visible');
+          window.removeEventListener('scroll', animateSection); // Remove event listener once animation is triggered
+      }
+  }
+
+  // Trigger animation when the section comes into view
+  window.addEventListener('scroll', animateSection);
+});
 
 
 
@@ -55,15 +72,6 @@
   {% include 'slider.html' with sliderdata=slides %}
 
 
-  <div class="imagesection">
-
-
-  
-
-    <h1>Grow your skills now</h1>
-    <p>Get mentorship from the best professionals in the field</p>
-    <p>"Mentoring is a brain to pick, an ear to listen, and a push in the right direction." - John Crosby</p>
-  </div>
   <div class="working">
     <h1>How it works</h1>
     <h3>The search section is used to search for mentors or mentees who align with your goals.Here you can find users profile</h3>
