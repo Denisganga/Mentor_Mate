@@ -1,0 +1,102 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Index</title>
+    {%load static%}  
+  
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('/static/images/nnn.jpg');
+            background-repeat: no-repeat;
+            background-size: cover; 
+          }
+          
+        
+          
+            h2 {
+                text-align: center;
+                color: #333; /* Text color */
+                font-size: 28px;
+                margin-bottom: 30px;
+                letter-spacing: 2px; /* Add spacing between letters */
+              }
+          
+          .form-group {
+            margin-bottom: 20px;
+          }
+          
+          label {
+            display: block;
+            margin-bottom: 5px;
+          }
+          
+          
+          .submit-button {
+            width: 50%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            margin: 0 auto;
+            display: block; 
+            
+          }
+          
+          .submit-button:hover {
+            background-color: #0056b3;
+          }
+          /* making the input fields circular*/
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+          width: 100%;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 20px; /* Adjust the value to increase or decrease the roundness */
+        }
+        
+        /* making the container of the registration form circular */
+        .container {
+            width: 30%;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 50px;
+            background-color: hwb(0 94% 3%);
+            border-radius: 50px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          }
+          
+    </style>
+</head>  
+<body>  
+ <div class=container>
+  <div class="thehead">
+  <h1>LOGIN PAGE</h1> 
+
+  </div>
+  <form action="" method=POST>
+    {% csrf_token %}
+    {% if error_message %}
+    <p style="color: red;">{{ error_message }}</p>
+    {% endif %}
+    <label for="fname">User Name:</label>   
+    <input type="text" placeholder="User Name" name='fname' required> <br> <br> <br> 
+
+    <label for ="fname">Password</label>
+    <input type="password" placeholder="input the correct password" name='pwd' required>  <br> <br> <br>
+
+    
+    <input type="submit" value="Login" class="submit-button">
+    <p>dont have an account?<a href="{% url 'authentication:register' %}">Register</a></p>
+  </form>
+ </div>
+</body>  
+</html> 

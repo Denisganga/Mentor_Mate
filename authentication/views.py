@@ -50,13 +50,13 @@ def Login(request):
         if user is not None:
             login(request, user)
 
-            return redirect("homepage:mainpage")
+            return redirect("authentication:homepage")
 
         else:
             error_message = "Error! The User Does Not Exist"
 
     return render(
-        request, "authentication/login.html", {"error_message": error_message}
+        request, "login.html", {"error_message": error_message}
     )
 
 

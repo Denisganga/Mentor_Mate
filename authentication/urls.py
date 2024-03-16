@@ -3,6 +3,7 @@ from .views import (Register,
                     Homepage,
                     Show_profile,
                     edit_profile,
+                    Login
                     )
 
 app_name='authentication'
@@ -12,4 +13,5 @@ urlpatterns = [
     path('homepage/', Homepage, name='homepage'),
     path('profile/', Show_profile, name='profile'),
     path('edit_profile/', edit_profile, name='edit-profile'),
+    path('login/', Login, name='login'),
 ]
