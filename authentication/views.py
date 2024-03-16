@@ -4,6 +4,7 @@ from django.contrib import messages
 from .models import Profile
 from django.contrib.auth.decorators import login_required
 from .forms import ProfileForm
+from.models import slider
 def Register(request):
     if request.method=='POST':
         username=request.POST.get('username')
@@ -39,12 +40,15 @@ def Register(request):
     return render(request,'register.html')
 
 
-import os
+
 
 def Homepage(request):
-    selected_image_filenames = ['im2.jpeg', 'im3.webp', 'im4.jpg']  # List of selected image filenames
-    images = [os.path.join('images', filename) for filename in selected_image_filenames]
-    return render(request, 'homepage.html', {'images': images})
+    sliderdata=slider.objects.all()
+    context={
+        'slides':sliderdata
+    }
+
+    return render(request, 'homepage.html',context)
 
 def Show_profile(request):
     profiles = Profile.objects.get(user=request.user)

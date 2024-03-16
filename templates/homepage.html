@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,7 +52,7 @@
     </script>
   </header>
 
-
+  {% include 'slider.html' with sliderdata=slides %}
 
 
   <div class="imagesection">
@@ -98,6 +99,8 @@
   </div>
   {% endfor %}
 </div>
+
+
 
 
 </html>

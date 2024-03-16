@@ -1,0 +1,98 @@
+<!-- slider.html -->
+<div class="slider-container">
+    <div class="slider">
+        {% for slide in slides %}
+            <div class="slider-item">
+                <img src="{{ slide.image.url }}" alt="{{ slide.title }}">
+                <div class="slide-content">
+                    <h2>{{ slide.title }}</h2>
+                    <p>{{ slide.description }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+    /* Slider Container Styles */
+    .slider-container {
+        width: 100%;
+        overflow: hidden;
+        position: relative; /* Ensure relative positioning for absolute elements */
+    }
+
+    /* Slider Item Styles */
+    .slider {
+        display: flex; /* Arrange slides horizontally */
+        transition: transform 0.5s ease; /* Smooth transition between slides */
+    }
+
+    .slider-item {
+        position: relative; /* Ensure relative positioning for absolute elements */
+        flex: 0 0 auto;
+        width: 100%; /* Adjust width according to your design */
+        height: 400px; /* Adjust the height as needed */
+    }
+
+    .slider-item img {
+        width: 100%; /* Make images fill the width of their container */
+        height: 100%; /* Make images fill the height of their container */
+        object-fit: cover; /* Cover the container while maintaining aspect ratio */
+    }
+
+    /* Slide Content Styles */
+    .slide-content {
+        position: absolute;
+        bottom: 20px; /* Adjust as needed to position the content */
+        left: 20px; /* Adjust as needed to position the content */
+        right: 20px; /* Adjust as needed to position the content */
+        text-align: center; /* Center text horizontally */
+        color: white; /* Text color */
+        background-color: rgba(0, 0, 0, 0.5); /* Background color with transparency */
+        padding: 10px; /* Adjust padding as needed */
+        max-width: calc(100% - 40px); /* Maximum width with padding */
+    }
+
+    .slide-content h2 {
+        margin: 0;
+        font-size: 24px; /* Adjust font size as needed */
+    }
+
+    .slide-content p {
+        margin: 5px 0 0; /* Adjust margins as needed */
+        font-size: 16px; /* Adjust font size as needed */
+    }
+</style>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Get the slider container and slider items
+        const sliderContainer = document.querySelector('.slider');
+        const sliderItems = document.querySelectorAll('.slider-item');
+
+        // Set initial slide index and width
+        let currentIndex = 0;
+        const slideWidth = sliderItems[0].offsetWidth;
+
+        // Function to move to the next slide
+        function moveToNextSlide() {
+            if (currentIndex < sliderItems.length - 1) {
+                currentIndex++;
+            } else {
+                currentIndex = 0;
+            }
+            updateSliderPosition();
+        }
+
+        // Function to update slider position
+        function updateSliderPosition() {
+            const newPosition = -1 * currentIndex * slideWidth;
+            sliderContainer.style.transform = `translateX(${newPosition}px)`;
+        }
+
+        // Automatically move to the next slide after a certain interval
+        setInterval(moveToNextSlide, 5000); // Change 5000 to desired interval in milliseconds
+    });
+</script>
+
