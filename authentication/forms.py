@@ -17,6 +17,20 @@ class AlumniRegistrationForm(UserCreationForm):
             'course'
         ]
 
+class StudentRegistrationForm(UserCreationForm):
+    school=forms.ModelChoiceField(School.objects.all(), empty_label='select a school')
+    registration_number=forms.CharField(max_length=50)
+    course=forms.CharField(max_length=100, label='Area of study')
+
+    class Meta:
+        model=Student
+        fields=[
+            'school',
+            'registration_number',
+            'course'
+        ]
+
+
 
 class ProfileForm(forms.ModelForm):
     class Meta:
