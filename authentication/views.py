@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from .models import Profile
 from django.contrib.auth.decorators import login_required
-from .forms import ProfileForm
+from .forms import ProfileForm,AlumniRegistrationForm,StudentRegistrationForm
 from.models import slider
 from django.contrib.auth import authenticate, login, logout
 def Register(request):
@@ -97,7 +97,16 @@ def edit_profile(request):
     return render(request, 'editprofile.html',{'form':form})
             
             
-        
+def alumni_registration(request):
+    if request.method=='POST':
+        form=AlumniRegistrationForm(request.POST)
+        if form.is_valid:
+            form.save()
+            return redirect('authentication:homepage')
+    else:
+        form=AlumniRegistrationForm()
+
+    return render(request,'alumniregistration.html',{'form':form})
 
 
 
