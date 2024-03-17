@@ -46,6 +46,27 @@ class Student(models.Model):
     registration_number = models.CharField(max_length=50) 
     course = models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.user.username
+    
+
+ #Tuples are used to store multiple items in a single variable   
+MENTORSHIP_STATUS_CHOICES=(
+    ('P','Pending'),
+    ('A','Active'),
+    ('C','Completed')
+)
+    
+class Mentorship(models.Model):
+    mentor = models.ForeignKey(Alumni, on_delete=models.CASCADE, related_name='mentorship_mentor')
+    mentee = models.ForeignKey(Student, on_delete=models.CASCADE, related_name='mentorship_mentee')
+    start_date = models.DateField()
+    end_date = models.DateField()
+    status = models.CharField(max_length=20, choices=MENTORSHIP_STATUS_CHOICES)
+
+    def __str__(self):
+        return f'{self.mentor.user.username} mentoring {self.mentee.user.username}'
+
 
 
     
