@@ -1,0 +1,74 @@
+
+body{
+background-image: url('/static/images/nnn.jpg');
+background-repeat: no-repeat;
+background-size: cover; 
+background-attachment: fixed;
+background-position: center;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .header {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navigation ul li {
+    display: inline-block;
+    margin-left: 20px;
+  }
+  
+  .navigation ul li:first-child {
+    margin-left: 0;
+  }
+  
+  .navigation ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .content {
+    padding-top: 60px; /* Adjust this value according to your header height */
+  }
+  
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  .navigation ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s; /* Add transition for smooth color change */
+  }
+  
+  .navigation ul li a:hover {
+    color: yellow; /* Change color to yellow on hover */
+  }
+  
+  

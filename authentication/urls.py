@@ -3,12 +3,14 @@ from .views import (Register,
                     Homepage,
                     Show_profile,
                     edit_profile,
-                    Login
+                    Login,
+                    Landing_page,
                     )
 
 app_name='authentication'
 
 urlpatterns = [
+    path('', Landing_page, name='landing-page'),
     path('register/', Register, name='register'),
     path('homepage/', Homepage, name='homepage'),
     path('profile/', Show_profile, name='profile'),

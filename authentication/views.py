@@ -59,7 +59,8 @@ def Login(request):
         request, "login.html", {"error_message": error_message}
     )
 
-
+def Landing_page(request):
+    return render(request, 'landingpage.html')
 
 
 def Homepage(request):
